@@ -29,6 +29,7 @@ function checkInput() {
     if (Name === "") {
         alert("Vui lòng nhập tên !!!");
     } else {
+        alert(`Chào mừng ${Name} đến với trò chơi !!!`);
         document.getElementById("log_in").setAttribute("style", "display : none");
         document.getElementById("main_game").setAttribute("style", "display : flex");
         startTimer(); // Bắt đầu đồng hồ
