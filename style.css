@@ -75,7 +75,6 @@ body{
     display: none;
 }
 #main_game #infor{
-    max-width: 20%;
     position: absolute;
     left: 20px;
     margin: 12px 12px;
@@ -90,7 +89,6 @@ body{
     background-color: rgba(0, 0, 0, 0.2);
     position: absolute;
     right: 20px;
-    width: 70%;
     height: 700px;
     border: solid 5px black;
     border-radius: 10px;
