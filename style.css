@@ -117,7 +117,7 @@ body{
 }
 .cards .card{
     cursor: pointer;
-    height: calc(100% / 4 - 20px);
+    height: calc(100% / 4 - 10px);
     width: calc(100% / 6 - 20px);
     position: relative;
     perspective: 800px;
