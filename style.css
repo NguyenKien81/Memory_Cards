@@ -92,7 +92,7 @@ body{
     background-color: rgba(0, 0, 0, 0.2);
     position: absolute;
     min-width: 70%;
-    max-width: calc(100% - 200px);
+    max-width: calc(100% - 300px);
     right: 20px;
     height: 100%;
     border: solid 5px black;
