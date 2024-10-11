@@ -2,6 +2,7 @@ let Name;
 let matchedCards = 0;
 let cardOne, cardTwo;
 let disableDeck = false;
+let turn = 0;
 let startTime; // Thời gian bắt đầu
 let timerInterval; // Biến để lưu interval
 let minutes = 0; // Biến để lưu phút
@@ -15,13 +16,11 @@ function startTimer() {
 function updateTimer() {
     const currentTime = Date.now();
     const elapsedTime = currentTime - startTime; // Thời gian đã trôi qua tính bằng mili giây
-
     // Chuyển đổi thành giây
     seconds = Math.floor((elapsedTime / 1000) % 60);
     minutes = Math.floor((elapsedTime / (1000 * 60)) % 60);
-
     // Hiển thị thời gian lên phần tử infor
-    document.getElementById("infor").innerHTML = `<b>Name:</b> ${Name}<br><b>Score:</b> ${matchedCards}<br><b>Time:</b> ${minutes}m ${seconds}s`;
+    document.getElementById("infor").innerHTML = `<b>Name:</b> ${Name} <b>Times:</b> ${turn} <b>Time:</b> ${minutes}m ${seconds}s`;
 }
 
 function checkInput() {
@@ -31,11 +30,20 @@ function checkInput() {
     } else {
         alert(`Chào mừng ${Name} đến với trò chơi !!!`);
         document.getElementById("log_in").setAttribute("style", "display : none");
-        document.getElementById("main_game").setAttribute("style", "display : flex");
+        if (window.innerWidth < window.innerHeight) {
+            document.getElementById("infor").style.flexWrap = "wrap";
+            var cards = document.getElementsByClassName("card");
+            for (var i = 0; i < cards.length; i++) {
+                cards[i].style.height = "calc(100% / 6 - 10px)"; 
+                cards[i].style.width = "calc(100% / 4 - 10px)"; 
+            }
+        }
+        document.getElementById("layout").setAttribute("style", "display : flex");
         startTimer(); // Bắt đầu đồng hồ
         updateTimer(); // Cập nhật thông tin ngay lập tức
     }
 }
+
 
 function shuffleCard() {
     let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -53,8 +61,8 @@ function shuffleCard() {
 function MatchCards(img1, img2) {
     if (img1 === img2) {
         matchedCards++;
-        document.getElementById("infor").innerHTML = `Name: ${Name}<br>Score: ${matchedCards}<br>Time: ${minutes}m ${seconds}s`;
-        if (matchedCards == 12) {
+        document.getElementById("infor").innerHTML = `<b>Name:</b> ${Name}` + " "+ `<b>Times:</b> ${turn}` + " " + ` <b>Time:</b> ${minutes}m ${seconds}s`;
+        if (matchedCards == arr.length/2) {
             setTimeout(() => {
                 clearInterval(timerInterval); // Dừng đồng hồ khi thắng
                 alert("Bạn đã thắng!"); // Thông báo khi người chơi thắng
@@ -83,9 +91,11 @@ function MatchCards(img1, img2) {
 
 function flipCard(player) {
     let clickedCard = player.target;
+    console.log(clickedCard);
     if (clickedCard !== cardOne && !disableDeck) {
         clickedCard.classList.add("flip");
         if (!cardOne) {
+            turn++;
             return cardOne = clickedCard;
         } 
         cardTwo = clickedCard;
