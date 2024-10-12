@@ -76,10 +76,10 @@ body{
 }
 #main_game #infor{
     position: absolute;
+    left: 10px;
     min-width: 150px;
     max-width: 20%;
     flex-wrap: wrap;
-    left: 20px;
     margin: 12px 12px;
     padding: 6px;
     border: solid 5px black;
@@ -91,9 +91,9 @@ body{
 #main_game .wrapper{
     background-color: rgba(0, 0, 0, 0.2);
     position: absolute;
+    right: 10px;
     min-width: 70%;
     max-width: calc(100% - 300px);
-    right: 20px;
     height: 700px;
     border: solid 5px black;
     border-radius: 10px;
