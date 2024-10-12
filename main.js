@@ -34,6 +34,13 @@ function checkInput() {
         alert(`Chào mừng ${Name} đến với trò chơi !!!`);
         document.getElementById("log_in").setAttribute("style", "display : none");
         document.getElementById("main_game").setAttribute("style", "display : flex");
+        if(window.innerWidth < "800px"){
+            document.getElementsByClassName("card").forEach(card => {
+                card.style.width = "cacl(100% / 6 - 2px)"
+                card.style.height = "cacl(100% / 4 - 4px)"
+
+            })
+        }
         startTimer(); // Bắt đầu đồng hồ
         updateTimer(); // Cập nhật thông tin ngay lập tức
     }
