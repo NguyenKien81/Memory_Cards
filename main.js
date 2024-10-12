@@ -7,7 +7,9 @@ let timerInterval; // Biến để lưu interval
 let minutes = 0; // Biến để lưu phút
 let seconds = 0; // Biến để lưu giây
 let times = 0;
-
+if(window.innerHeight > window.innerWidth) {
+    alert("Hãy xoay ngang màn hình để có trải nghiệp tốt nhất !!!");
+}
 function startTimer() {
     startTime = Date.now(); // Lưu thời gian hiện tại khi bắt đầu
     timerInterval = setInterval(updateTimer, 1000); // Cập nhật mỗi giây
@@ -26,10 +28,6 @@ function updateTimer() {
 }
 
 function checkInput() {
-    while(window.innerHeight > window.innerWidth) {
-        alert("Hãy xoay ngang màn hình để có trải nghiệp tốt nhất !!!");
-        
-    }
     Name = document.getElementById('Name').value;
     if (Name === "") {
         alert("Vui lòng nhập tên !!!");
