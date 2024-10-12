@@ -80,7 +80,6 @@ body{
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.2);
     font-family: 'Patrick Hand', 'Arial', cursive;
-    font-size: 48px;
     display: flex;
     justify-content: space-between;
 }
@@ -93,7 +92,7 @@ body{
     justify-content: space-evenly;
     align-content: space-evenly;
     padding: 20px;
-    margin: 60px 20px 0px 20px;
+    margin: 120px 20px 0px 20px;
 }
 .back-view img{
     max-width: 100%;

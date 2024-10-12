@@ -24,7 +24,9 @@ function updateTimer() {
     minutes = Math.floor((elapsedTime / (1000 * 60)) % 60);
 
     // Hiển thị thời gian lên phần tử infor
-    document.getElementById("infor").innerHTML = `<b>Time:</b> ${minutes}m ${seconds}s <b>Times:</b> ${times} <b>Name:</b> ${Name}`;
+    var infor = document.getElementById("infor");
+    infor.innerHTML = `<b>Time:</b> ${minutes}m ${seconds}s <b>Times:</b> ${times} <b>Name:</b> ${Name}`;
+    infor.style.fontSize = (window.innerWidth < "800px") ? "12px" : "48px";
 }
 
 function checkInput() {
@@ -36,7 +38,6 @@ function checkInput() {
         document.getElementById("log_in").setAttribute("style", "display : none");
         document.getElementById("main_game").setAttribute("style", "display : flex");
         if(window.innerWidth < "800px"){
-            document.getElementById("infor").style.fontSize = "12px";
             document.getElementsByClassName("card").forEach(card => {
                 card.style.width = "cacl(100% / 6 - 2px)"
                 card.style.height = "cacl(100% / 4 - 4px)"
@@ -64,7 +65,9 @@ function shuffleCard() {
 function MatchCards(img1, img2) {
     if (img1 === img2) {
         matchedCards++;
-        document.getElementById("infor").innerHTML = `<b>Time:</b> ${minutes}m ${seconds}s` + `<b>Times:</b> ${times}` + `<b>Name:</b> ${Name}`;
+        var infor = document.getElementById("infor");
+        infor.innerHTML = `<b>Time:</b> ${minutes}m ${seconds}s <b>Times:</b> ${times} <b>Name:</b> ${Name}`;
+        infor.style.fontSize = (window.innerWidth < "800px") ? "12px" : "48px";
         if (matchedCards == 12) {
             setTimeout(() => {
                 clearInterval(timerInterval); // Dừng đồng hồ khi thắng
