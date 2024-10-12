@@ -85,12 +85,9 @@ body{
     justify-content: space-between;
 }
 #main_game .wrapper{
-    background-color: rgba(0, 0, 0, 0.2);
     position: absolute;
     width: 90%;
     height: 100%;
-    border: solid 5px black;
-    border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
