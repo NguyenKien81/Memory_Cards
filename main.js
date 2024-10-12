@@ -36,6 +36,7 @@ function checkInput() {
         document.getElementById("log_in").setAttribute("style", "display : none");
         document.getElementById("main_game").setAttribute("style", "display : flex");
         if(window.innerWidth < "800px"){
+            document.getElementById("infor").style.fontSize = "12px";
             document.getElementsByClassName("card").forEach(card => {
                 card.style.width = "cacl(100% / 6 - 2px)"
                 card.style.height = "cacl(100% / 4 - 4px)"
