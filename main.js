@@ -22,15 +22,11 @@ function updateTimer() {
     minutes = Math.floor((elapsedTime / (1000 * 60)) % 60);
 
     // Hiển thị thời gian lên phần tử infor
-    document.getElementById("infor").innerHTML = `<b>Time:</b> ${minutes}m ${seconds}s<br> <b>Times:</b> ${times}<br> <b>Name:</b> ${Name}`;
+    document.getElementById("infor").innerHTML = `<b>Time:</b> ${minutes}m ${seconds}s <b>Times:</b> ${times} <b>Name:</b> ${Name}`;
 }
 
 function checkInput() {
-    if(window.innerHeight > window.innerWidth) alert("Hãy xoay ngang màn hình để có trải nghiệp tốt nhất !!!");
-    if(window.innerWidth < "800px") {
-        document.getElementById("infor").style.fontSize = "12px";
-        document.getElementById("infor").style.fontWeight = "12px";
-    }
+    while(window.innerHeight > window.innerWidth) alert("Hãy xoay ngang màn hình để có trải nghiệp tốt nhất !!!");
     Name = document.getElementById('Name').value;
     if (Name === "") {
         alert("Vui lòng nhập tên !!!");
@@ -59,7 +55,7 @@ function shuffleCard() {
 function MatchCards(img1, img2) {
     if (img1 === img2) {
         matchedCards++;
-        document.getElementById("infor").innerHTML = `<b>Time:</b> ${minutes}m ${seconds}s<br> <b>Times:</b> ${times}<br> <b>Name:</b> ${Name}`;
+        document.getElementById("infor").innerHTML = `<b>Time:</b> ${minutes}m ${seconds}s` + `<b>Times:</b> ${times}` + `<b>Name:</b> ${Name}`;
         if (matchedCards == 12) {
             setTimeout(() => {
                 clearInterval(timerInterval); // Dừng đồng hồ khi thắng

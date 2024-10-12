@@ -3,9 +3,6 @@ body{
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-content: center;
 }
 #log_in{
     display: flex;
@@ -73,13 +70,10 @@ body{
 
 #main_game{
     display: none;
+    flex-direction: column;
 }
 #main_game #infor{
-    position: absolute;
-    left: 10px;
-    min-width: 150px;
-    max-width: 20%;
-    flex-wrap: wrap;
+    width: 95%;
     margin: 12px 12px;
     padding: 6px;
     border: solid 5px black;
@@ -87,14 +81,14 @@ body{
     background-color: rgba(0, 0, 0, 0.2);
     font-family: 'Patrick Hand', 'Arial', cursive;
     font-size: 48px;
+    display: flex;
+    justify-content: space-between;
 }
 #main_game .wrapper{
     background-color: rgba(0, 0, 0, 0.2);
     position: absolute;
-    right: 10px;
-    min-width: 70%;
-    max-width: calc(100% - 300px);
-    height: 700px;
+    width: 90%;
+    height: 100%;
     border: solid 5px black;
     border-radius: 10px;
     display: flex;
@@ -102,6 +96,7 @@ body{
     justify-content: space-evenly;
     align-content: space-evenly;
     padding: 20px;
+    margin: 120px 20px 0px 20px;
 }
 .back-view img{
     max-width: 100%;
