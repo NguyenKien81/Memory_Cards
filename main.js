@@ -26,7 +26,10 @@ function updateTimer() {
 }
 
 function checkInput() {
-    while(window.innerHeight > window.innerWidth) alert("Hãy xoay ngang màn hình để có trải nghiệp tốt nhất !!!");
+    while(window.innerHeight > window.innerWidth) {
+        alert("Hãy xoay ngang màn hình để có trải nghiệp tốt nhất !!!");
+        
+    }
     Name = document.getElementById('Name').value;
     if (Name === "") {
         alert("Vui lòng nhập tên !!!");
